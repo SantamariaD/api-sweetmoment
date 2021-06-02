@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//RUTAS DE PRODUCTOS
+Route::prefix('productos')->group(function () {
+    Route::post('/guardar', 'ProductoController@guardarProducto');
+    Route::get('/traer-todos-productos', 'ProductoController@traerTodosProductos');
+});
+//FIN RUTAS DE PRODUCTOS
